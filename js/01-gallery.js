@@ -1,6 +1,12 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
 
+function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 16777215)
+    .toString(16)
+    .padStart(6, 0)}`;
+}
+
 console.log(galleryItems);
 
 const galleryPhoto = document.querySelector(".gallery");
