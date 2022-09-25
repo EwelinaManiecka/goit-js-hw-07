@@ -45,9 +45,14 @@ function escBtn(el) {
   }
 };
 
+const url = instance.element().querySelector("img");
+
 //ta funkcja nie działa!!!
 function openModal(ev) {
   ev.preventDefault();
+  url.src= ev.target.dataset.source;
   instance.element().querySelector("img").src = ev.target.dataset.source;
   instance.show();
 };
+
+
