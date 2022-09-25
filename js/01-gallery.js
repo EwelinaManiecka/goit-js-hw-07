@@ -15,6 +15,7 @@ function makeGallery(photos) {
     <a class = "gallery__link" href = "${original}">
     <img class = "gallery__image"
     src = "${preview}"
+    data-source = "${original}"
     alt = "${description}"/>
     </a>
     </div>`
@@ -45,10 +46,8 @@ function escBtn(el) {
 };
 
 //ta funkcja nie działa!!!
-// function openModal(el) {
-//   el.preventDefault();
-//   instance.element().querySelector("img").src = el.target.dataset.source;
-//   instance.show();
-// };
-
-
+function openModal(ev) {
+  ev.preventDefault();
+  instance.element().querySelector("img").src = ev.target.dataset.source;
+  instance.show();
+};
