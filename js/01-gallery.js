@@ -41,6 +41,10 @@ onClose: () => {
 //wtedy dodaje się ciemne tło, jak w modalu
 // instance.show();
 
+//problemem było, że w tej funkcji dałaś
+//instance.onClose(), zamiast
+//instance.close()
+
 function escBtn(ev) {
   if (ev.code === "Escape") {
     instance.close();
