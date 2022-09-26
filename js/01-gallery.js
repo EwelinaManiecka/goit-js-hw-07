@@ -1,12 +1,6 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
 
-function getRandomHexColor() {
-  return `#${Math.floor(Math.random() * 16777215)
-    .toString(16)
-    .padStart(6, 0)}`;
-}
-
 console.log(galleryItems);
 
 const galleryPhoto = document.querySelector(".gallery");
@@ -36,24 +30,25 @@ const instance = basicLightbox.create(
     console.log("add listener");
     document.addEventListener("keydown", escBtn);
   },
-onclose: () => {
+onClose: () => {
   console.log("remove listener");
   document.removeEventListener("keydown", escBtn);
 },
 }
 );
 
-instance.show();
+//Jak dodasz instance.show(),
+//wtedy dodaje się ciemne tło, jak w modalu
+// instance.show();
 
-function escBtn(el) {
-  if (el.code === "Escape") {
+function escBtn(ev) {
+  if (ev.code === "Escape") {
     instance.close();
   }
 };
 
 const url = instance.element().querySelector("img");
 
-//ta funkcja nie działa!!!
 function openModal(ev) {
   ev.preventDefault();
   url.src= ev.target.dataset.source;
